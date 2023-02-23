@@ -1,0 +1,12 @@
+name: Black Python Formatter
+description: Run black formatter on whole repository.
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Black
+      shell: bash
+      run: |
+        source .venv/bin/activate
+        black --check .
