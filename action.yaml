@@ -1,0 +1,15 @@
+name: Black Python Formatter
+description: Run black formatter check on whole repository.
+
+runs:
+  using: "composite"
+
+  steps:
+    - name: Poetry install
+      uses: wintero92/poetry-install-action@v1
+
+    - name: Black
+      shell: bash
+      run: |
+        source .venv/bin/activate
+        black --check .
